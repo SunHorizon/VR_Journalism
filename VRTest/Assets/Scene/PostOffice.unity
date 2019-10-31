@@ -588,6 +588,7 @@ GameObject:
   - component: {fileID: 1094377989}
   - component: {fileID: 1094377991}
   - component: {fileID: 1094377990}
+  - component: {fileID: 1094377992}
   m_Layer: 5
   m_Name: Message
   m_TagString: Untagged
@@ -650,6 +651,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1094377988}
   m_CullTransparentMesh: 0
+--- !u!65 &1094377992
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094377988}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 92.33774, y: 101.899994, z: 0}
+  m_Center: {x: 9.460949, y: -1.5799974, z: 0}
 --- !u!1 &1163858841
 GameObject:
   m_ObjectHideFlags: 0
@@ -759,3 +773,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b382ba208626e446aa416f6ca8919f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  camera: {fileID: 8434288}

@@ -8,13 +8,13 @@ public class audioPlay : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        voiceover.Play();
     }
 
     // Update is called once per frame
     void Update()
     {        
-            voiceover.Play();
+        
         if (voiceover.isPlaying)
         {
             Debug.Log("aaaaaaaaaaaaaahhhhhhhhhhh");

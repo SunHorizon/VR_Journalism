@@ -25,6 +25,7 @@ public class cameraRaycast : MonoBehaviour
         else
         {
             loading.value = 0;
+            canvas.SetActive(false);
         }
         if (loading.value == 300)
         {

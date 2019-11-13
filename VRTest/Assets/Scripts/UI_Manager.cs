@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//using Valve.VR;
 
 public class UI_Manager : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class UI_Manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        //SteamVR_Controller.
     }
 
     // Update is called once per frame

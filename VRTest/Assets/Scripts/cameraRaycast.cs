@@ -10,8 +10,8 @@ public class cameraRaycast : MonoBehaviour
     private RaycastHit hit;
 
 
-    private LoadText textLoader;
-    private LoadCanvas CanvasLoader;
+    [SerializeField] private LoadText textLoader;
+    [SerializeField] private LoadCanvas CanvasLoader;
 
     private Text InfoText;
 
@@ -44,13 +44,13 @@ public class cameraRaycast : MonoBehaviour
         Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 30, Color.red);
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 20) && hit.transform.gameObject.tag == "Wall")
         {
-        
-           InfoText = hit.transform.GetChild(0).GetChild(1).GetChild(0).GetComponent<Text>();
-           textLoader = hit.transform.GetChild(0).GetChild(1).GetChild(0).GetComponent<LoadText>();
-           textLoader.SetInfoText(InfoText);
 
-           CanvasLoader = hit.transform.GetChild(0).GetComponent<LoadCanvas>();
-           CanvasLoader.LoadTimer(1);
+            InfoText = hit.transform.GetChild(0).GetChild(1).GetChild(0).GetComponent<Text>();
+            textLoader = hit.transform.GetChild(0).GetChild(1).GetChild(0).GetComponent<LoadText>();
+            textLoader.SetInfoText(InfoText);
+
+            CanvasLoader = hit.transform.GetChild(0).GetComponent<LoadCanvas>();
+            CanvasLoader.LoadTimer(1);
         }
         else
         {
@@ -60,7 +60,7 @@ public class cameraRaycast : MonoBehaviour
             if (!textLoader.TextComlp)
             {
                 textLoader.StopText();
-            }         
+            }
         }
     }
 

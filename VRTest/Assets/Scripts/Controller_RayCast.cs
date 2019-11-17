@@ -29,7 +29,7 @@ public class Controller_RayCast : MonoBehaviour
         Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 40, Color.green);
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 40, 8))//layerMask for layer 8
         {
-            //if(controller.Trigger){}
+            //if(hit.collider.tag == "Warp" && controller.Trigger){}
             Debug.Log("Raycast from controller is Hitting the door changing object");
             string objectName = hit.collider.name;
             GameManager.ChangeScenes(objectName);

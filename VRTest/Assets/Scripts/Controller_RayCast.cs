@@ -6,6 +6,7 @@ public class Controller_RayCast : MonoBehaviour
 {
     //private SteamVR_TrackedController controller;
     //LayerMask mask;
+    RaycastHit hit;
     private LineRenderer line;
 
     void Start()
@@ -23,15 +24,14 @@ public class Controller_RayCast : MonoBehaviour
     void CheckForDoor() {
 
         line.SetPosition(0, transform.position);//drawing the line renderer
-        line.SetPosition(1, transform.TransformDirection(Vector3.forward) * 30);
-
-        RaycastHit hit;
-        Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 30, Color.green);
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 20, 8))//layerMask for layer 8
+        line.SetPosition(1, transform.TransformDirection(Vector3.forward) * 40);      
+        
+        Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 40, Color.green);
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 40, 8))//layerMask for layer 8
         {
             //if(controller.Trigger){}
             Debug.Log("Raycast from controller is Hitting the door changing object");
-            string objectName = hit.collider.tag;
+            string objectName = hit.collider.name;
             GameManager.ChangeScenes(objectName);
         }
         

@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
         if (scene_ == "Room1")
         {
             Debug.Log("Room1");
-            //SceneManager.LoadScene(1);
+            SceneManager.LoadScene(1);
         }
         if (scene_ == "Room2")
         {

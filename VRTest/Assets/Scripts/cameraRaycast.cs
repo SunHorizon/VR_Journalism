@@ -27,7 +27,7 @@ public class cameraRaycast : MonoBehaviour
     {
         // load the UI in word space
         LoadingUI();
-
+        FireWaypoint();
         if (CanvasLoader.LoadingTimer == CanvasLoader.loadCounter)
         {
             CanvasLoader.StartLoading();
@@ -63,6 +63,14 @@ public class cameraRaycast : MonoBehaviour
             }
         }
     }
-   
+    void FireWaypoint()
+    {
 
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 20) && hit.transform.gameObject.tag == "Warp")
+        {
+            GameManager.ChangeScenes(hit.transform.gameObject.name);
+        }
+
+    }
 }

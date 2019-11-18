@@ -63,7 +63,7 @@ public class cameraRaycast : MonoBehaviour
             }
         }
     }
-    void FireWaypoint()
+    void FireWaypoint()//CHANGING SCENE WITH HEAD SET
     {
 
         //RaycastHit hit;
@@ -76,12 +76,12 @@ public class cameraRaycast : MonoBehaviour
 
     }
 
-    IEnumerator WaitToChangeScene(float waitTime, string name_)
-    {
+    //IEnumerator WaitToChangeScene(float waitTime, string name_)
+    //{
 
-        yield return new WaitForSeconds(waitTime);
-        print("WaitAndPrint " + Time.time);
-        GameManager.ChangeScenes(name_);
+    //    yield return new WaitForSeconds(waitTime);
+    //    print("WaitAndPrint " + Time.time);
+    //    GameManager.ChangeScenes(name_);
 
-    }
+    //}
 }

@@ -21,12 +21,11 @@ public class VideoPlayerClips : MonoBehaviour
     {
         
     }
-
     public void GetVideoIndex(int index_)
     {
         Debug.Log(index_);
-        videoPlayer.clip = videos[index_];
-        //SceneSetUp.
+        videoPlayer.clip = videos[index_];//getting null ptr      
         videoPlayer.Play();
+        //move camera to shift doors, and stuff
     }
 }

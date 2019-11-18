@@ -41,8 +41,8 @@ public class cameraRaycast : MonoBehaviour
 
     void LoadingUI()
     {
-        Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 30, Color.red);
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 20) && hit.transform.gameObject.tag == "Wall")
+        Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 80, Color.red);
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 200) && hit.transform.gameObject.tag == "Wall")
         {
 
             InfoText = hit.transform.GetChild(0).GetChild(1).GetChild(0).GetComponent<Text>();
@@ -66,11 +66,22 @@ public class cameraRaycast : MonoBehaviour
     void FireWaypoint()
     {
 
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 20) && hit.transform.gameObject.tag == "Warp")
-        {
-            GameManager.ChangeScenes(hit.transform.gameObject.name);
-        }
+        //RaycastHit hit;
+        //if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 200) && hit.transform.gameObject.tag == "Warp")
+        //{
+        //    string objectName = hit.collider.name;
+        //    //GameManager.ChangeScenes(hit.transform.gameObject.name);
+        //    StartCoroutine(WaitToChangeScene(2.0f, objectName));
+        //}
+
+    }
+
+    IEnumerator WaitToChangeScene(float waitTime, string name_)
+    {
+
+        yield return new WaitForSeconds(waitTime);
+        print("WaitAndPrint " + Time.time);
+        GameManager.ChangeScenes(name_);
 
     }
 }

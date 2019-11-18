@@ -20,12 +20,12 @@ public class GameManager : MonoBehaviour
     static public void ChangeScenes(string scene_)
     {
         Debug.Log("In GameManager->ChangeScene");
-        Debug.Log(scene_);//is collider with "Wall"
+        Debug.Log(scene_);
 
         if (scene_ == "FrontDoor")
         {
             Debug.Log("FrontDoor");
-            //SceneManager.LoadScene(0);
+            SceneManager.LoadScene(0);
         }
         if (scene_ == "Room1")
         {

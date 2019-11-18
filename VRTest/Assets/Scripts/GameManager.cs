@@ -18,34 +18,38 @@ public class GameManager : MonoBehaviour
     }
 
     static public void ChangeScenes(string scene_)
-    {
-        Debug.Log("In GameManager->ChangeScene");
-        Debug.Log(scene_);
-
+    {        
         if (scene_ == "FrontDoor")
-        {
-            Debug.Log("FrontDoor");
+        {            
             SceneManager.LoadScene(0);
         }
         if (scene_ == "Room1")
-        {
-            Debug.Log("Room1");
+        {           
             SceneManager.LoadScene(1);
         }
-        if (scene_ == "Room2")
-        {
-            Debug.Log("Room2");
+        if (scene_ == "Room1_1")
+        {           
             SceneManager.LoadScene(2);
         }
-        if (scene_ == "WalkWay")
-        {
-            Debug.Log("WalkWay");
+        if (scene_ == "Room2")
+        {           
             SceneManager.LoadScene(3);
         }
-        if (scene_ == "Room4")
-        {
-            Debug.Log("Room4");
+        if (scene_ == "Room2_2")
+        {           
             SceneManager.LoadScene(4);
+        }
+        if (scene_ == "Room2_3")
+        {           
+            SceneManager.LoadScene(5);
+        }
+        if (scene_ == "WalkWay")
+        {           
+            SceneManager.LoadScene(6);
+        }
+        if (scene_ == "Room4")
+        {           
+            SceneManager.LoadScene(7);
         }
     }
 }

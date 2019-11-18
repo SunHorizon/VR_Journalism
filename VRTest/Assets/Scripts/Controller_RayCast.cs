@@ -44,7 +44,7 @@ public class Controller_RayCast : MonoBehaviour
 
             }
             else {//change scene    
-
+                Debug.Log(hit.collider.name);
                 GameManager.ChangeScenes(hit.collider.name);
             }
         }

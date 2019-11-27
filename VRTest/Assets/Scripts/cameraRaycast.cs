@@ -15,7 +15,7 @@ public class cameraRaycast : MonoBehaviour
 
     private Text InfoText;
 
-
+    public AudioSource voiceover;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +27,6 @@ public class cameraRaycast : MonoBehaviour
     {
         // load the UI in word space
         LoadingUI();
-        FireWaypoint();
         if (CanvasLoader.LoadingTimer == CanvasLoader.loadCounter)
         {
             CanvasLoader.StartLoading();
@@ -49,6 +48,11 @@ public class cameraRaycast : MonoBehaviour
             textLoader = hit.transform.GetChild(0).GetChild(1).GetChild(0).GetComponent<LoadText>();
             textLoader.SetInfoText(InfoText);
 
+            if (!voiceover.isPlaying)
+            {
+                voiceover.Play();
+            }
+
             CanvasLoader = hit.transform.GetChild(0).GetComponent<LoadCanvas>();
             CanvasLoader.LoadTimer(1);
         }
@@ -63,25 +67,4 @@ public class cameraRaycast : MonoBehaviour
             }
         }
     }
-    void FireWaypoint()//CHANGING SCENE WITH HEAD SET
-    {
-
-        //RaycastHit hit;
-        //if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 200) && hit.transform.gameObject.tag == "Warp")
-        //{
-        //    string objectName = hit.collider.name;
-        //    //GameManager.ChangeScenes(hit.transform.gameObject.name);
-        //    StartCoroutine(WaitToChangeScene(2.0f, objectName));
-        //}
-
-    }
-
-    //IEnumerator WaitToChangeScene(float waitTime, string name_)
-    //{
-
-    //    yield return new WaitForSeconds(waitTime);
-    //    print("WaitAndPrint " + Time.time);
-    //    GameManager.ChangeScenes(name_);
-
-    //}
 }

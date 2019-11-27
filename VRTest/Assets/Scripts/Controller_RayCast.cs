@@ -15,14 +15,13 @@ public class Controller_RayCast : MonoBehaviour
 
     void Start()
     {
-        //mask = LayerMask.GetMask("Wall");
         line = GetComponent<LineRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        line.SetPosition(0, transform.position);//drawing the line renderer
+        line.SetPosition(0, transform.position);// Drawing the line renderer
         line.SetPosition(1, transform.TransformDirection(Vector3.forward) * 100);
         if (SteamVR_Actions._default.GrabPinch.GetStateDown(inputSource))
         {
@@ -37,7 +36,7 @@ public class Controller_RayCast : MonoBehaviour
         Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 100, Color.green);
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 100))//layerMask for layer 8 for "Wall
         {
-            if (hit.collider.name == "FootSteps1_1")//TESTING for changing video clips, then moving camera
+            if (hit.collider.name == "FootSteps1_1") // Testing for changing video clips, then moving camera
             {
                 VideoPlayerClips video = new VideoPlayerClips();
                 video.GetVideoIndex(1);

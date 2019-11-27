@@ -8,6 +8,7 @@ public class MouseRotate : MonoBehaviour
     public int speed;
     public float horizontal;
     private float yaw = 0.0f;
+
     // Start is called before the first frame update
     void Start()
     {
